@@ -10,7 +10,7 @@ vAe = 0
 vSer = 0
 
 i = 1
-while (i < 4):
+while (i < 5):
     print(ver_bar)
     print(vot_tab)
     print('Insira seu voto: ')
@@ -35,8 +35,9 @@ while (i < 4):
     i = i + 1
 
 result = max(vBol, vLul, vPm, vPc, vAe, vSer)
-
-if (result == vBol):
+if (vBol or vLul or vPm or vPc or vAe or vSer)==(vBol or vLul or vPm or vPc or vAe or vSer):
+    print("Houve empate!")
+elif (result == vBol):
     print("O candidato vencedor é Jair M. Bolsonaro!")
 elif (result == vLul):
     print("O candidato vencedor é Luiz Inácio Lula da Silva!")
