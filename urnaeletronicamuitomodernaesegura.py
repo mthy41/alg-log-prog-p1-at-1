@@ -39,26 +39,35 @@ while (sen != versen):
         print(hor_tab)
 
 
+#func pra avisar que o voto foi computado
+def vcomp():
+    input('Voto computado, pressione enter para o próximo.')
+    
 #loop para gerar as escolhas
 while (vn < nrep):
     print(ver_bar)
     print(vot_tab)
     print('Insira seu voto: ')
     vt = int(input())
-    input('Voto computado, pressione enter para o próximo.')
     print(hor_tab)
     if (vt == 22):
         vBol = vBol + 1
+        vcomp()
     elif (vt == 13):
         vLul = vLul + 1
+        vcomp()
     elif (vt == 24):
         vPm = vPm + 1
+        vcomp()
     elif (vt == 60):
         vPc = vPc + 1
+        vcomp()
     elif (vt == 32):
         vAe = vAe + 1
+        vcomp()
     elif (vt == 92):
         vSer = vSer + 1
+        vcomp()
     else:
         print('Número de votação inválido, seu voto foi anulado.')
         input('Pressione enter para continuar.')
