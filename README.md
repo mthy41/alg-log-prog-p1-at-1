@@ -1,5 +1,3 @@
 # Atividade I ALP
 ___
-Atividades do primeiro período da faculdade da matéria de algorítimos e lógica de programação.
-comita comita comita comitaa!!!!
-comita isso diabo
+Atividades do primeiro período da faculdade da matéria de algorítimos e lógica de programação + alguns miniprojetos inúteis que eu crio pra praticar.
