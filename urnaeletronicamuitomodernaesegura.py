@@ -1,3 +1,5 @@
+import getpass
+
 ver_bar = "----------------------------------"
 vot_tab = "Candidatos\nJair M. Bolsonaro (22)\nLuis Inácio Lula da Silva (13)\nPablo Marçal (24)\nPinochet (60)\nAécio Neves (32)\nSergio Moro (92)"
 hor_tab = "|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|\n|"
@@ -9,12 +11,41 @@ vPc = 0
 vAe = 0
 vSer = 0
 
-i = 1
-while (i < 5):
+nrep = 0 #nrep: número de repetições
+vn = 0 #vn: número de iteração do loop (i)
+maxrep = 20 #maxrep: número máximo de repetições
+
+#loop pra pedir o nrep e checar e o número é valido
+while (nrep <= 0):
+  nrep = int(float(input(f'Número de pessoas que vão votar (max {maxrep}) ')))
+  if (nrep <=0):
+    print('Número inválido.')
+    nrep = int(nrep)
+    nrep = 0
+  if (nrep >= maxrep):
+    print('Número grande demais.')
+    nrep = 0
+
+#loop para criar senha
+sen = "default"
+versen = "default_ver"
+print('Crie uma senha para ver os resultados')
+while (sen != versen):
+    sen = getpass.getpass('Nova senha:')
+    versen = getpass.getpass('Verifique a senha')
+    if (sen != versen):
+        print("Senhas não batem, tente novamente.")
+    else:
+        print(hor_tab)
+
+
+#loop para gerar as escolhas
+while (vn < nrep):
     print(ver_bar)
     print(vot_tab)
     print('Insira seu voto: ')
     vt = int(input())
+    input('Voto computado, pressione enter para o próximo.')
     print(hor_tab)
     if (vt == 22):
         vBol = vBol + 1
@@ -32,10 +63,21 @@ while (i < 5):
         print('Número de votação inválido, seu voto foi anulado.')
         input('Pressione enter para continuar.')
         print(hor_tab)
-    i = i + 1
+    vn = vn + 1
 
 result = max(vBol, vLul, vPm, vPc, vAe, vSer)
-if (vBol or vLul or vPm or vPc or vAe or vSer)==(vBol or vLul or vPm or vPc or vAe or vSer):
+
+if (sen != ""):
+    print('Insira a senha para ver o resultado.')
+
+endsen = ""
+while (endsen != sen):
+    endsen = getpass.getpass('Senha: ')
+    if (endsen != sen):
+        print('Senha incorreta, tente novamente.')
+
+
+if ():
     print("Houve empate!")
 elif (result == vBol):
     print("O candidato vencedor é Jair M. Bolsonaro!")
@@ -50,7 +92,7 @@ elif (result == vAe):
 elif (result == vSer):
     print("O candidato vencedor é Sergio Moro!")
 else:
-    print("Ocorreu um erro na avaliação dos votos. :(")
+    print("Ocorreu um erro na avaliação dos votos.")
 
 
 
