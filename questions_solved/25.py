@@ -27,7 +27,7 @@ if (qp == 0):
     print('Inocente')
 elif (qp == 2):
     print("Supeita")
-elif (3 <= qp >= 4):
+elif (qp == 3 or qp == 4):
     print("Cúmplice")
 else:
     print("Assasino")
